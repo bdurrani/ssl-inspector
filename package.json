@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "unit-test": "mocha -r ts-node/register -r tsconfig-paths/register \"test/**/*.ts\"",
+    "test": "nyc mocha -r ts-node/register -r tsconfig-paths/register -r source-map-support/register \"test/**/*.ts\"",
+    "watch": "tsc -w",
+    "build-dist": " rm -rf dist/ && tsc -b -f",
+    "ciphers": "node -r ts-node/register ./assets/generate-ciphers.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +18,7 @@
     "promise-socket": "^5.0.0"
   },
   "devDependencies": {
+    "csv-parse": "^4.4.3",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.2"
   }

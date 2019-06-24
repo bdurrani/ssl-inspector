@@ -1,12 +1,14 @@
-import net from 'net';
-import PromiseSocket from 'promise-socket';
+import net from "net";
+import PromiseSocket from "promise-socket";
+import { createClientHelloBuffer } from "./constants";
+
 // docs: https://tls.ulfheim.net/
 (async () => {
   const client = new net.Socket();
   const socket = new PromiseSocket(client);
   await socket.connect({
     port: 443,
-    host: 'google.com'
+    host: "google.com"
   });
 
   const buffer = [
@@ -64,8 +66,10 @@ import PromiseSocket from 'promise-socket';
     0x01,
     0x00
   ];
-  const data = new Uint8Array(buffer);
+
+  const buffer2 = createClientHelloBuffer("TLSv1.0");
+  const data = new Uint8Array(buffer2);
   const byteWritten = await socket.write(Buffer.from(data));
   const input = await socket.readAll();
-  console.log('all done');
+  console.log("all done");
 })();
