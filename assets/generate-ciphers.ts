@@ -10,16 +10,38 @@ const records: Array<any> = csvparse(csvdata, {
   columns: true
 });
 
-const actualRecords = records.map(rec => {
-  const val = rec.Value.split(",").map((i: string) => parseInt(i, 16));
-  rec.Value = val;
-  return rec as Record;
+const actualRecords = records
+  .filter(rec => {
+    const description: string = rec.Description;
+    if (!description) {
+      return false;
+    }
+    const lowercaseDescription = description.toLowerCase();
+    if (lowercaseDescription === "unassigned") {
+      return false;
+    }
+
+    if (lowercaseDescription.includes("reserved")) {
+      return false;
+    }
+
+    return true;
+  })
+  .map(rec => {
+    const val = rec.Value.split(",").map((i: string) => parseInt(i, 16));
+    rec.Value = val;
+    return rec as Record;
+  });
+
+const cleanedRecords = JSON.stringify(actualRecords, null, "\t");
+const outFile = path.join(__dirname, "..", "src", "outfile.json");
+
+console.log(`Generating cipher data to ${outFile}`);
+
+fs.writeFileSync(outFile, cleanedRecords, {
+  encoding: "utf8"
 });
 
-const blah = JSON.stringify(actualRecords, null, "\t");
-const outFile = path.join(__dirname, "outfile.json");
-
-fs.writeFileSync(outFile, blah);
 interface Record {
   Description: string;
   ["DTLS-OK"]: string;
@@ -27,7 +49,3 @@ interface Record {
   Reference: string;
   Value: number[];
 }
-
-console.log(__dirname);
-
-(async () => {})();

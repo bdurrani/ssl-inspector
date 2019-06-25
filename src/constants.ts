@@ -1,3 +1,5 @@
+import ciphers from "./outfile.json";
+
 export const HandShakeRecord = [0x16];
 export const Protocols = {
   SSLv3: [0x03, 0x00],

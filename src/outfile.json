@@ -282,16 +282,6 @@
 	{
 		"Value": [
 			0,
-			28
-		],
-		"Description": "Reserved to avoid conflicts with SSLv3",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": "[RFC5246]"
-	},
-	{
-		"Value": [
-			0,
 			30
 		],
 		"Description": "TLS_KRB5_WITH_DES_CBC_SHA",
@@ -702,56 +692,6 @@
 	{
 		"Value": [
 			0,
-			71
-		],
-		"Description": "Reserved to avoid conflicts with         \ndeployed implementations",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": "[Pasi_Eronen]"
-	},
-	{
-		"Value": [
-			0,
-			80
-		],
-		"Description": "Reserved to avoid conflicts",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": "[Pasi Eronen, <pasi.eronen&nokia.com>, 2008-04-04.  2008-04-04]"
-	},
-	{
-		"Value": [
-			0,
-			89
-		],
-		"Description": "Reserved to avoid conflicts with         \ndeployed implementations",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": "[Pasi_Eronen]"
-	},
-	{
-		"Value": [
-			0,
-			93
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			0,
-			96
-		],
-		"Description": "Reserved to avoid conflicts with\nwidely deployed implementations",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": "[Pasi_Eronen]"
-	},
-	{
-		"Value": [
-			0,
 			103
 		],
 		"Description": "TLS_DHE_RSA_WITH_AES_128_CBC_SHA256",
@@ -818,16 +758,6 @@
 		"DTLS-OK": "Y",
 		"Recommended": "N",
 		"Reference": "[RFC5246]"
-	},
-	{
-		"Value": [
-			0,
-			110
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
 	},
 	{
 		"Value": [
@@ -1492,42 +1422,12 @@
 	{
 		"Value": [
 			0,
-			198
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			0,
 			255
 		],
 		"Description": "TLS_EMPTY_RENEGOTIATION_INFO_SCSV",
 		"DTLS-OK": "Y",
 		"Recommended": "N",
 		"Reference": "[RFC5746]"
-	},
-	{
-		"Value": [
-			1,
-			null
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			19,
-			0
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
 	},
 	{
 		"Value": [
@@ -1581,26 +1481,6 @@
 	},
 	{
 		"Value": [
-			19,
-			6
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			20,
-			null
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
 			86,
 			0
 		],
@@ -1608,17 +1488,6 @@
 		"DTLS-OK": "Y",
 		"Recommended": "N",
 		"Reference": "[RFC7507]"
-	},
-	{
-		"Value": [
-			86,
-			1,
-			0
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
 	},
 	{
 		"Value": [
@@ -3432,16 +3301,6 @@
 	},
 	{
 		"Value": [
-			192,
-			182
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
 			193,
 			0
 		],
@@ -3469,36 +3328,6 @@
 		"DTLS-OK": "N",
 		"Recommended": "N",
 		"Reference": "[draft-smyshlyaev-tls12-gost-suites]"
-	},
-	{
-		"Value": [
-			193,
-			3
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			194,
-			null
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			204,
-			0
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
 	},
 	{
 		"Value": [
@@ -3572,36 +3401,6 @@
 	},
 	{
 		"Value": [
-			204,
-			175
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			205,
-			null
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			208,
-			0
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
 			208,
 			1
 		],
@@ -3633,71 +3432,11 @@
 	{
 		"Value": [
 			208,
-			4
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			208,
 			5
 		],
 		"Description": "TLS_ECDHE_PSK_WITH_AES_128_CCM_SHA256",
 		"DTLS-OK": "Y",
 		"Recommended": "Y",
 		"Reference": "[RFC8442]"
-	},
-	{
-		"Value": [
-			208,
-			6
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			209,
-			null
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			254,
-			0
-		],
-		"Description": "Unassigned",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": ""
-	},
-	{
-		"Value": [
-			254,
-			254
-		],
-		"Description": "Reserved to avoid conflicts with\nwidely deployed implementations",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": "[Pasi_Eronen]"
-	},
-	{
-		"Value": [
-			255,
-			0
-		],
-		"Description": "Reserved for Private Use",
-		"DTLS-OK": "",
-		"Recommended": "",
-		"Reference": "[RFC8446]"
 	}
 ]
