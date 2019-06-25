@@ -1,5 +1,7 @@
 import ciphers from "./outfile.json";
 
+type ProtocolInteface = "SSLv3" | "TLSv1.0" | "TLSv1.1" | "TLSv1.2";
+
 export const HandShakeRecord = [0x16];
 export const Protocols = {
   SSLv3: [0x03, 0x00],
@@ -7,8 +9,6 @@ export const Protocols = {
   "TLSv1.1": [0x03, 0x02],
   "TLSv1.2": [0x03, 0x03]
 };
-
-type ProtocolInteface = "SSLv3" | "TLSv1.0" | "TLSv1.1" | "TLSv1.2";
 
 // 45 bytes of handshake remaining
 const RemainingHandshakeBytes = [0x00, 0x2d];
@@ -19,9 +19,9 @@ const RemainingHandshakeBytes = [0x00, 0x2d];
 const HandShakeMessageType = [0x1];
 
 //42 bytes remaining
-const RemainingHandshakreBytes2 = [0x0, 0x0, 0x29];
+const RemainingHandshakeBytes2 = [0x0, 0x0, 0x29];
 
-const AnotherBuffer = [
+const Random32Bytes = [
   0x53,
   0x4a,
   0x84,
@@ -53,13 +53,21 @@ const AnotherBuffer = [
   0x18,
   0x19,
   0x1a,
-  0x1b,
-  0x00,
-  0x00,
-  0x02
+  0x1b
+  // 0x00, // session id
+  // 0x00,
+  // 0x02 // 2 bytes of cipher suite data
 ];
 
+const SessionId = [0x0];
+const CipherSuiteSize = [0x0, 0x2];
+
 const suite = [0x0, 0x35];
+
+/**
+ * [Number of bytes of compression data,
+ * No compression ]
+ */
 const CompressionMethods = [0x01, 0x00];
 
 export const ServerHello = {
@@ -73,9 +81,11 @@ export function createClientHelloBuffer(protocol: ProtocolInteface) {
     ...Protocols[protocol],
     ...RemainingHandshakeBytes,
     ...HandShakeMessageType,
-    ...RemainingHandshakreBytes2,
+    ...RemainingHandshakeBytes2,
     ...Protocols[protocol],
-    ...AnotherBuffer,
+    ...Random32Bytes,
+    ...SessionId,
+    ...CipherSuiteSize,
     ...suite,
     ...CompressionMethods
   ];
