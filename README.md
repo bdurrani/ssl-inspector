@@ -1,5 +1,8 @@
 # ssl-inspector
 
+Inspired by the following project
+https://raw.githubusercontent.com/xlucas/ssl-inspector/master/bin/ssl-inspector.rb
+
 # Reference
 
 https://tls.ulfheim.net/
