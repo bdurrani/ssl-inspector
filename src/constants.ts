@@ -59,6 +59,10 @@ const Random32Bytes = [
   // 0x02 // 2 bytes of cipher suite data
 ];
 
+function generateRandomBytes(min: number = 0, max: number = 255) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const SessionId = [0x0];
 const CipherSuiteSize = [0x0, 0x2];
 
@@ -76,6 +80,10 @@ export const ServerHello = {
 };
 
 export function createClientHelloBuffer(protocol: ProtocolInteface) {
+  const random32Bytes = new Uint8Array(32);
+  for (let index = 0; index < 32; index++) {
+    random32Bytes[index] = generateRandomBytes();
+  }
   return [
     ...HandShakeRecord,
     ...Protocols[protocol],
@@ -83,7 +91,7 @@ export function createClientHelloBuffer(protocol: ProtocolInteface) {
     ...HandShakeMessageType,
     ...RemainingHandshakeBytes2,
     ...Protocols[protocol],
-    ...Random32Bytes,
+    ...random32Bytes,
     ...SessionId,
     ...CipherSuiteSize,
     ...suite,
